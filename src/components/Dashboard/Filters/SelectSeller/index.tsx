@@ -8,17 +8,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Seller } from "@/types";
-import { useEffect, useState } from "react";
 
-const SelectSeller = () => {
-  const [sellers, setSellers] = useState<Seller[]>([]);
+type SellersProps = {
+  sellers: Seller[];
+};
 
-  useEffect(() => {
-    fetch("http://localhost:3001/sellers")
-      .then((res) => res.json())
-      .then(setSellers);
-  }, []);
-
+const SelectSeller = ({ sellers }: SellersProps) => {
   return (
     <Select>
       <SelectTrigger className="w-[280px]">
