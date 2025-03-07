@@ -1,17 +1,13 @@
-import { Button } from "../../ui/button";
-import { Input } from "../../ui/input";
 import DatePicker from "../DataPicker";
+import Modal from "../Modal";
+import SelectSeller from "./SelectSeller";
 
 const Filters = () => {
   return (
     <section className="py-7 flex justify-start items-center gap-4 w-xl">
-      <Input
-        className="border-muted-foreground grow"
-        type="text"
-        placeholder="Selecione o vendedor"
-      />
+      <SelectSeller />
       <DatePicker />
-      <Button>Filtrar</Button>
+      <Modal />
     </section>
   );
 };
