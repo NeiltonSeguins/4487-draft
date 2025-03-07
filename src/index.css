@@ -71,6 +71,21 @@ button {
   transition: border-color 0.25s;
 }
 
+/* WebKit (Chrome, Safari) */
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: none;
+}
+
+/* IE 10+ */
+.custom-scrollbar {
+  -ms-overflow-style: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

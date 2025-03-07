@@ -1,0 +1,116 @@
+{
+  "sellers": [
+    {
+      "id": 1,
+      "name": "Tabata Silva",
+      "email": "tabata.silva@email.com",
+      "photo": "./tabata.svg",
+      "totalSales": 5530,
+      "commission": 276.50,
+      "itemsSold": 15,
+      "salesCount": 10,
+      "sales": [
+        {
+          "amount": 1500,
+          "date": "2024-02-10T09:00:00Z"
+        },
+        {
+          "amount": 2000,
+          "date": "2024-02-20T14:30:00Z"
+        },
+        {
+          "amount": 2030,
+          "date": "2024-03-05T11:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Eduardo Moraes",
+      "email": "eduardo.moraes@email.com",
+      "photo": "./eduardo.svg",
+      "totalSales": 5010,
+      "commission": 250.50,
+      "itemsSold": 13,
+      "salesCount": 9,
+      "sales": [
+        {
+          "amount": 1250,
+          "date": "2024-02-05T10:00:00Z"
+        },
+        {
+          "amount": 1760,
+          "date": "2024-02-15T16:45:00Z"
+        },
+        {
+          "amount": 2000,
+          "date": "2024-03-02T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Isabela Nunes",
+      "email": "isabela.nunes@email.com",
+      "photo": "./isabela.svg",
+      "totalSales": 4671,
+      "commission": 233.55,
+      "itemsSold": 12,
+      "salesCount": 8,
+      "sales": [
+        {
+          "amount": 980,
+          "date": "2024-02-08T13:20:00Z"
+        },
+        {
+          "amount": 1860,
+          "date": "2024-02-22T09:10:00Z"
+        },
+        {
+          "amount": 1831,
+          "date": "2024-03-06T15:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "William Gonçalves",
+      "email": "will.goncalves@email.com",
+      "photo": "./william.svg",
+      "totalSales": 4233,
+      "commission": 211.65,
+      "itemsSold": 10,
+      "salesCount": 7,
+      "sales": [
+        {
+          "amount": 1500,
+          "date": "2024-02-12T11:00:00Z"
+        },
+        {
+          "amount": 2733,
+          "date": "2024-03-04T17:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Sofia Andrade",
+      "email": "sofia.andrade@email.com",
+      "photo": "./sofia.svg",
+      "totalSales": 3750,
+      "commission": 187.50,
+      "itemsSold": 9,
+      "salesCount": 6,
+      "sales": [
+        {
+          "amount": 1900,
+          "date": "2024-02-14T08:30:00Z"
+        },
+        {
+          "amount": 1850,
+          "date": "2024-03-01T13:45:00Z"
+        }
+      ]
+    }
+  ]
+}

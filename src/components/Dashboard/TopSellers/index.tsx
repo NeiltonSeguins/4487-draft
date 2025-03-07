@@ -3,11 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 
 const TopSellers = () => {
   return (
-    <Card className="flex-1/12 border-muted-foreground">
+    <Card className="flex-1/12 border-muted-foreground h-[350px]">
       <CardHeader>
         <CardTitle>Ranking de vendedores</CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col gap-6">
+      <CardContent className="flex flex-col gap-6 overflow-hidden overflow-y-scroll custom-scrollbar">
         <div className="flex items-center gap-4 w-full">
           <Avatar className="w-[40px] h-[40px]">
             <AvatarImage src="/avatar.svg" alt="avatar" />
@@ -43,6 +43,19 @@ const TopSellers = () => {
             <h3 className="font-sans font-medium text-sm">Isabela Nunes</h3>
             <p className="font-sans font-normal text-sm text-muted-foreground">
               isabela.nunes@email.com
+            </p>
+          </div>
+          <span className="font-medium font-sans text-base">+R$5530,00</span>
+        </div>
+        <div className="flex items-center gap-4 w-full">
+          <Avatar className="w-[40px] h-[40px]">
+            <AvatarImage src="/avatar.svg" alt="avatar" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <div className="grow">
+            <h3 className="font-sans font-medium text-sm">Willian Gonçalves</h3>
+            <p className="font-sans font-normal text-sm text-muted-foreground">
+              willian.gonçalves@email.com
             </p>
           </div>
           <span className="font-medium font-sans text-base">+R$5530,00</span>
