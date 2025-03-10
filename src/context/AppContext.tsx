@@ -7,7 +7,6 @@ import {
   ReactNode,
 } from "react";
 import { Seller } from "../types";
-import { format } from "date-fns";
 
 interface AppContextType {
   search: string;
@@ -16,8 +15,6 @@ interface AppContextType {
   sellers: Seller[];
   selectedSeller: Seller | null;
   selectSeller: (sellerId: number) => void;
-  selectedDate: string | null;
-  selectDate: (date: Date | undefined) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -31,7 +28,6 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   const [suggestions, setSuggestions] = useState<Seller[]>([]);
   const [sellers, setSellers] = useState<Seller[]>([]);
   const [selectedSeller, setSelectedSeller] = useState<Seller | null>(null);
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("http://localhost:3001/sellers")
@@ -59,14 +55,6 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     setSelectedSeller(seller);
   };
 
-  const selectDate = (date: Date | undefined) => {
-    if (!date) {
-      setSelectedDate(null);
-      return;
-    }
-    setSelectedDate(format(date, "dd/MM/yyyy"));
-  };
-
   const value: AppContextType = {
     search,
     updateSearch,
@@ -74,8 +62,6 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     sellers,
     selectedSeller,
     selectSeller,
-    selectedDate,
-    selectDate,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

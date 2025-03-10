@@ -8,21 +8,7 @@
       "totalSales": 5530,
       "commission": 276.50,
       "itemsSold": 15,
-      "salesCount": 10,
-      "sales": [
-        {
-          "amount": 1500,
-          "date": "10/02/2024"
-        },
-        {
-          "amount": 2000,
-          "date": "20/02/2024"
-        },
-        {
-          "amount": 2030,
-          "date": "05/03/2024"
-        }
-      ]
+      "salesCount": 10
     },
     {
       "id": 2,
@@ -32,21 +18,7 @@
       "totalSales": 5010,
       "commission": 250.50,
       "itemsSold": 13,
-      "salesCount": 9,
-      "sales": [
-        {
-          "amount": 1250,
-          "date": "05/02/2024"
-        },
-        {
-          "amount": 1760,
-          "date": "15/02/2024"
-        },
-        {
-          "amount": 2000,
-          "date": "02/03/2024"
-        }
-      ]
+      "salesCount": 9
     },
     {
       "id": 3,
@@ -56,21 +28,7 @@
       "totalSales": 4671,
       "commission": 233.55,
       "itemsSold": 12,
-      "salesCount": 8,
-      "sales": [
-        {
-          "amount": 980,
-          "date": "08/02/2024"
-        },
-        {
-          "amount": 1860,
-          "date": "22/02/2024"
-        },
-        {
-          "amount": 1831,
-          "date": "06/03/2024"
-        }
-      ]
+      "salesCount": 8
     },
     {
       "id": 4,
@@ -80,17 +38,7 @@
       "totalSales": 4233,
       "commission": 211.65,
       "itemsSold": 10,
-      "salesCount": 7,
-      "sales": [
-        {
-          "amount": 1500,
-          "date": "12/02/2024"
-        },
-        {
-          "amount": 2733,
-          "date": "04/03/2024"
-        }
-      ]
+      "salesCount": 7
     },
     {
       "id": 5,
@@ -100,17 +48,7 @@
       "totalSales": 3750,
       "commission": 187.50,
       "itemsSold": 9,
-      "salesCount": 6,
-      "sales": [
-        {
-          "amount": 1900,
-          "date": "14/02/2024"
-        },
-        {
-          "amount": 1850,
-          "date": "01/03/2024"
-        }
-      ]
+      "salesCount": 6
     }
   ]
 }

@@ -18,7 +18,7 @@ const formatCurrency = (value: number) => {
 };
 
 const Modal = () => {
-  const { selectedSeller, selectedDate } = useAppContext();
+  const { selectedSeller } = useAppContext();
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -29,9 +29,7 @@ const Modal = () => {
           <DialogTitle>Detalhes do vendedor</DialogTitle>
           <DialogDescription>
             {selectedSeller
-              ? `Confira abaixo os números de ${
-                  selectedSeller.name
-                } para a data ${selectedDate || "todas as datas"}:`
+              ? `Confira abaixo os números do(a) vendedor(a):`
               : "Selecione um vendedor para visualizar os dados."}
           </DialogDescription>
         </DialogHeader>
