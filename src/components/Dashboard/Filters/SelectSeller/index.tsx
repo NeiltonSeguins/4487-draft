@@ -10,10 +10,10 @@ import {
 import { useAppContext } from "@/context/AppContext";
 
 const SelectSeller = () => {
-  const { sellers } = useAppContext();
+  const { sellers, selectSeller } = useAppContext();
 
   return (
-    <Select>
+    <Select onValueChange={(value) => selectSeller(Number(value))}>
       <SelectTrigger className="w-[280px]">
         <SelectValue placeholder="Selecione um vendedor" />
       </SelectTrigger>
@@ -21,7 +21,7 @@ const SelectSeller = () => {
         <SelectGroup>
           <SelectLabel>Vendedores</SelectLabel>
           {sellers.map((seller) => (
-            <SelectItem key={seller.id} value={seller.name}>
+            <SelectItem key={seller.id} value={String(seller.id)}>
               {seller.name}
             </SelectItem>
           ))}

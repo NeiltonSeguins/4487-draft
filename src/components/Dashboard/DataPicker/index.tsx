@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ptBR } from "date-fns/locale";
@@ -10,9 +9,16 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useState } from "react";
+import { useAppContext } from "@/context/AppContext";
 
 const DatePicker = () => {
+  const { selectedDate, selectDate } = useAppContext();
   const [date, setDate] = useState<Date>();
+
+  const handleDateChange = (newDate: Date | undefined) => {
+    setDate(newDate);
+    selectDate(newDate);
+  };
 
   return (
     <Popover>
@@ -26,11 +32,7 @@ const DatePicker = () => {
             )}
           >
             <CalendarIcon />
-            {date ? (
-              format(date, "PPP", { locale: ptBR })
-            ) : (
-              <span>Selecione uma data</span>
-            )}
+            {selectedDate ? selectedDate : <span>Selecione uma data</span>}
           </Button>
         </div>
       </PopoverTrigger>
@@ -38,7 +40,7 @@ const DatePicker = () => {
         <Calendar
           mode="single"
           selected={date}
-          onSelect={setDate}
+          onSelect={handleDateChange}
           initialFocus
           locale={ptBR}
         />

@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, {
+import {
   createContext,
   useState,
   useEffect,
@@ -7,12 +7,17 @@ import React, {
   ReactNode,
 } from "react";
 import { Seller } from "../types";
+import { format } from "date-fns";
 
 interface AppContextType {
   search: string;
   updateSearch: (newSearch: string) => void;
   suggestions: Seller[];
   sellers: Seller[];
+  selectedSeller: Seller | null;
+  selectSeller: (sellerId: number) => void;
+  selectedDate: string | null;
+  selectDate: (date: Date | undefined) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -21,10 +26,12 @@ interface AppProviderProps {
   children: ReactNode;
 }
 
-export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  const [search, setSearch] = useState<string>("");
+export const AppProvider = ({ children }: AppProviderProps) => {
+  const [search, setSearch] = useState("");
   const [suggestions, setSuggestions] = useState<Seller[]>([]);
   const [sellers, setSellers] = useState<Seller[]>([]);
+  const [selectedSeller, setSelectedSeller] = useState<Seller | null>(null);
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("http://localhost:3001/sellers")
@@ -45,8 +52,19 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     setSuggestions(filtered);
   }, [search, sellers]);
 
-  const updateSearch = (newSearch: string) => {
-    setSearch(newSearch);
+  const updateSearch = (newSearch: string) => setSearch(newSearch);
+
+  const selectSeller = (sellerId: number) => {
+    const seller = sellers.find((s) => s.id === sellerId) || null;
+    setSelectedSeller(seller);
+  };
+
+  const selectDate = (date: Date | undefined) => {
+    if (!date) {
+      setSelectedDate(null);
+      return;
+    }
+    setSelectedDate(format(date, "dd/MM/yyyy"));
   };
 
   const value: AppContextType = {
@@ -54,6 +72,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     updateSearch,
     suggestions,
     sellers,
+    selectedSeller,
+    selectSeller,
+    selectedDate,
+    selectDate,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

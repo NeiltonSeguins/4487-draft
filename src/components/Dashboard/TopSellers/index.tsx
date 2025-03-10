@@ -1,16 +1,9 @@
-import { Seller } from "@/types";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
-import { useEffect, useState } from "react";
 import SellerCard from "./SellerCard";
+import { useAppContext } from "@/context/AppContext";
 
 const TopSellers = () => {
-  const [sellers, setSellers] = useState<Seller[]>([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3001/sellers")
-      .then((res) => res.json())
-      .then(setSellers);
-  }, []);
+  const { sellers } = useAppContext();
 
   return (
     <Card className="flex-1/12 border-muted-foreground h-[350px]">
