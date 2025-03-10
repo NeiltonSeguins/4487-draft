@@ -1,46 +1,40 @@
-import { Bar, BarChart, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, XAxis } from "recharts";
 import { Card, CardHeader, CardTitle } from "../../ui/card";
-import { ChartConfig, ChartContainer } from "../../ui/chart";
-
-const chartData = [
-  { month: "January", valor: 186 },
-  { month: "February", valor: 305 },
-  { month: "March", valor: 237 },
-  { month: "April", valor: 73 },
-  { month: "May", valor: 209 },
-  { month: "June", valor: 214 },
-  { month: "July", valor: 114 },
-  { month: "August", valor: 344 },
-];
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "../../ui/chart";
+import { useSalesChartData } from "../../../hooks/useSalesChartData";
 
 const chartConfig = {
-  valor: {
-    label: "Desktop",
-  },
+  totalSales: { label: "Vendas", color: "#2563eb" },
+  commission: { label: "Comissão", color: "#60a5fa" },
 } satisfies ChartConfig;
 
 const SalesChart = () => {
+  const chartData = useSalesChartData();
+
   return (
     <Card className="flex-3/4 border-muted-foreground">
       <CardHeader>
-        <CardTitle>Vendas gerais</CardTitle>
+        <CardTitle>Vendas vs Comissão</CardTitle>
       </CardHeader>
       <ChartContainer config={chartConfig} className="max-h-[260px] w-full">
         <BarChart accessibilityLayer data={chartData}>
           <XAxis
-            dataKey="month"
-            tickLine={false}
-            tickMargin={10}
-            axisLine={false}
-            tickFormatter={(value) => value.slice(0, 3)}
-          />
-          <YAxis
-            dataKey="valor"
+            dataKey="name"
             tickLine={false}
             tickMargin={10}
             axisLine={false}
           />
-          <Bar dataKey="valor" fill="var(--color-desktop)" radius={4} />
+          <ChartTooltip content={<ChartTooltipContent />} />
+          <ChartLegend content={<ChartLegendContent />} />
+          <Bar dataKey="totalSales" fill="var(--color-primary)" radius={4} />
+          <Bar dataKey="commission" fill="var(--color-primary-foreground)" radius={4} />
         </BarChart>
       </ChartContainer>
     </Card>
