@@ -7,13 +7,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Seller } from "@/types";
+import { useAppContext } from "@/context/AppContext";
 
-type SellersProps = {
-  sellers: Seller[];
-};
+const SelectSeller = () => {
+  const { sellers } = useAppContext();
 
-const SelectSeller = ({ sellers }: SellersProps) => {
   return (
     <Select>
       <SelectTrigger className="w-[280px]">

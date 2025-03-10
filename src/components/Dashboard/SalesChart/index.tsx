@@ -9,6 +9,8 @@ const chartData = [
   { month: "April", valor: 73 },
   { month: "May", valor: 209 },
   { month: "June", valor: 214 },
+  { month: "July", valor: 114 },
+  { month: "August", valor: 344 },
 ];
 
 const chartConfig = {
