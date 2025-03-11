@@ -7,8 +7,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useAppContext } from "@/context/AppContext";
 import CardInfoModal from "./CardInfoModal";
+import { useAppContext } from "@/hooks/useAppContext";
 
 const formatCurrency = (value: number) => {
   return new Intl.NumberFormat("pt-BR", {
@@ -19,6 +19,7 @@ const formatCurrency = (value: number) => {
 
 const Modal = () => {
   const { selectedSeller } = useAppContext();
+
   return (
     <Dialog>
       <DialogTrigger asChild>

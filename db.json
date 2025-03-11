@@ -1,7 +1,7 @@
 {
   "sellers": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Tabata Silva",
       "email": "tabata.silva@email.com",
       "photo": "./tabata.svg",
@@ -11,7 +11,7 @@
       "salesCount": 10
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Eduardo Moraes",
       "email": "eduardo.moraes@email.com",
       "photo": "./eduardo.svg",
@@ -21,7 +21,7 @@
       "salesCount": 9
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Isabela Nunes",
       "email": "isabela.nunes@email.com",
       "photo": "./isabela.svg",
@@ -31,7 +31,7 @@
       "salesCount": 8
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "William Gonçalves",
       "email": "will.goncalves@email.com",
       "photo": "./william.svg",
@@ -41,7 +41,7 @@
       "salesCount": 7
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Sofia Andrade",
       "email": "sofia.andrade@email.com",
       "photo": "./sofia.svg",

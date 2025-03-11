@@ -1,4 +1,4 @@
-import { useAppContext } from "@/context/AppContext";
+import { useAppContext } from "./useAppContext";
 
 export const useSalesChartData = () => {
   const { sellers } = useAppContext();

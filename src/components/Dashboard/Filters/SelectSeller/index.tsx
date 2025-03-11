@@ -7,13 +7,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useAppContext } from "@/context/AppContext";
+import { useAppContext } from "@/hooks/useAppContext";
 
 const SelectSeller = () => {
   const { sellers, selectSeller } = useAppContext();
 
   return (
-    <Select onValueChange={(value) => selectSeller(Number(value))}>
+    <Select onValueChange={(value) => selectSeller(value)}>
       <SelectTrigger className="w-[280px]">
         <SelectValue placeholder="Selecione um vendedor" />
       </SelectTrigger>

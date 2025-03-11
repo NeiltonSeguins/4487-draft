@@ -1,3 +1,4 @@
+import { useAppContext } from "@/hooks/useAppContext";
 import {
   Card,
   CardContent,
@@ -5,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../../ui/card";
-import { useAppContext } from "@/context/AppContext";
 
 const formatCurrency = (value: number) => {
   return new Intl.NumberFormat("pt-BR", {

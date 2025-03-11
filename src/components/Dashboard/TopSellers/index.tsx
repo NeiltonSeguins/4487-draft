@@ -1,6 +1,6 @@
+import { useAppContext } from "@/hooks/useAppContext";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import SellerCard from "./SellerCard";
-import { useAppContext } from "@/context/AppContext";
 
 const TopSellers = () => {
   const { sellers } = useAppContext();

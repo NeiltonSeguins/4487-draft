@@ -34,7 +34,7 @@ const SalesChart = () => {
           <ChartTooltip content={<ChartTooltipContent />} />
           <ChartLegend content={<ChartLegendContent />} />
           <Bar dataKey="totalSales" fill="var(--color-primary)" radius={4} />
-          <Bar dataKey="commission" fill="var(--color-primary-foreground)" radius={4} />
+          <Bar dataKey="commission" fill="var(--color-primary)" radius={4} />
         </BarChart>
       </ChartContainer>
     </Card>

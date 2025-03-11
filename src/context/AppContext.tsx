@@ -1,23 +1,17 @@
 /* eslint-disable react-refresh/only-export-components */
-import {
-  createContext,
-  useState,
-  useEffect,
-  useContext,
-  ReactNode,
-} from "react";
+import { createContext, useState, useEffect, ReactNode } from "react";
 import { Seller } from "../types";
 
-interface AppContextType {
+export interface AppContextType {
   search: string;
   updateSearch: (newSearch: string) => void;
   suggestions: Seller[];
   sellers: Seller[];
   selectedSeller: Seller | null;
-  selectSeller: (sellerId: number) => void;
+  selectSeller: (sellerId: string) => void;
 }
 
-const AppContext = createContext<AppContextType | undefined>(undefined);
+export const AppContext = createContext<AppContextType | undefined>(undefined);
 
 interface AppProviderProps {
   children: ReactNode;
@@ -50,7 +44,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
 
   const updateSearch = (newSearch: string) => setSearch(newSearch);
 
-  const selectSeller = (sellerId: number) => {
+  const selectSeller = (sellerId: string) => {
     const seller = sellers.find((s) => s.id === sellerId) || null;
     setSelectedSeller(seller);
   };
@@ -65,12 +59,4 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
-};
-
-export const useAppContext = () => {
-  const context = useContext(AppContext);
-  if (context === undefined) {
-    throw new Error("useAppContext deve ser usado dentro de um contexto");
-  }
-  return context;
 };

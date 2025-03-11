@@ -1,4 +1,4 @@
-import { useAppContext } from "@/context/AppContext";
+import { useAppContext } from "@/hooks/useAppContext";
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
 
